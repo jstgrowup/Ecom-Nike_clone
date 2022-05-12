@@ -31,6 +31,7 @@
 }
 #logo>svg{
     height: 150%;
+   
 
 }
 .allothers{
@@ -66,7 +67,7 @@
 }
 #panel>div{
     height: 100%;
-    width:150px ;
+    width:120px ;
     border: 1px solid red;
     margin: auto;
     display: flex;
@@ -74,20 +75,36 @@
     align-items: center;
     font-size: 18px;
     font-family: sans-serif;
+    border-radius: 8px;
+    
 
     
     
 }
+.sneakers,.womens{
+    background-color: gray;
+    
+}
+
 #panel>div:hover{
     transform: scale(1.02);
 }
 #panel p{
     color: black;
+    font-family: sans-serif;
+    font-weight:600;
 
 }
+
 a{
     color: white;
     text-decoration: none;
+}
+#panel>:nth-child(1) p{
+    color: white;
+}
+#panel>:nth-child(3) p{
+    color: white;
 }
 #filters{
     height: 50px;
@@ -101,23 +118,24 @@ a{
 
 }
 #random{
-    height: fit-content;
+    height:auto;
     width: 90%;
     margin: auto;
     border: 1px solid rebeccapurple;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(5,1fr);
+    grid-template-rows: repeat(auto,1fr);
     gap: 20px;
     margin-top: 40px;
 }
 #random>div{
     
-    border: 2px solid black;
+    border: 1px solid gray;
     display: flex;
     flex-direction: column;
     font-size: 17px;
     cursor: pointer;
+    border-radius: 10px;
    
     
     
@@ -132,13 +150,15 @@ a{
 #random>div>img{
     height: 80%;
     width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   
 }
 
 #below{
     height: 20%;
     width: 100%;
-    border:1px solid red ;
+    /* border:1px solid red ; */
     font-size: 18px;
     font-family: sans-serif;
     display: flex;
@@ -152,7 +172,7 @@ a{
     
 }
 .pricetag{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     
     display: flex;
     font-size: 19px;
@@ -161,10 +181,26 @@ a{
 }
 
 .huru{
-   border: 1px solid red;
+   /* border: 1px solid red; */
    
    position: relative;
   
    font-family: sans-serif;
    
+}
+.sub{
+    height: 30px;
+    width: 150px;
+    /* border: 1px solid red; */
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+ color: white;
+ font-size: 20px;
+ border-radius: 7px;
+ cursor: pointer;
+
+
 }

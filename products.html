@@ -23,8 +23,10 @@
                    <div id="login"><h3><a href="login.html">Login</a></h3></div>
                   
         </div>
-      
+        
+       
    </div>
+  
    <!-- <div id="random">
       <div>
           <img src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/94397042-f86b-4fdc-8ec0-99c6e70e3096/toddler-dunk-low-obsidian-graffiti-dm1048-400-release-date.jpg" alt="">
@@ -228,16 +230,43 @@
     category: "mens",
   },
 ];
-    display(maindata)
+   localStorage.setItem("maindata",JSON.stringify(maindata))
+display(maindata)
    function display(data){
        document.querySelector("#random").innerHTML=""
        data.forEach(function(el,i){
          var cards=document.createElement("div")
 
          var img=document.createElement("img")
+         var nichewaladiv=document.createElement("div")
+         var daam=document.createElement("p")
+         var huru=document.createElement("p")
+         var model=document.createElement("h4")
+         var pricetag=document.createElement("div")
+    //    var after=document.createElement("div")
+         var btn=document.createElement("button")
+         
          img.setAttribute("src",el.img)
-         cards.append(img)
+         nichewaladiv.setAttribute("id","below")
+         daam.setAttribute("id","daam")
+         daam.innerHTML=`Rs.`
+       
+        huru.setAttribute("class","huru")
+         huru.innerText=el.price
+         daam.append(huru)
+         
+         
+         model.innerText=el.model
+         pricetag.setAttribute("class","pricetag")
+
+
+          btn.setAttribute("class","submit")
+
+         pricetag.append(daam,huru)
+         nichewaladiv.append(model,pricetag,btn)
+         cards.append(img,nichewaladiv)
          document.querySelector("#random").append(cards)
+         
        })
    }   
 </script>
