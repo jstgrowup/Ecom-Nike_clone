@@ -1,8 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
 .navbar{
     height: 75px;
     width: 95%;
     margin: auto;
-    /* border: 1px solid rgb(22, 21, 21); */
+    border: 1px solid rgb(22, 21, 21);
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -17,7 +23,7 @@
 #logo{
     height: 70%;
     width: 10%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
    margin-left: 10px;
 }
 #logo>svg{
@@ -27,7 +33,7 @@
 .allothers{
     height: 100%;
     width: 30%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -35,7 +41,7 @@
 .allothers>div{
     height: 50%;
     width: 25%;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     background-color: black;
     color: white;
     font-family: sans-serif;
@@ -46,29 +52,52 @@
     border-radius: 15px;
 
 }
-
-/* #maindiv{
+#panel{
+    width: 500px;
+    border: 1px solid green ;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+#panel>div{
+    height: 100%;
+    width:150px ;
     border: 1px solid red;
-    height: auto;
-    width: 90%;
     margin: auto;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: sans-serif;
 
-} */
+    
+    
+}
+#panel p{
+    color: black;
+
+}
 a{
     color: white;
     text-decoration: none;
 }
-#pictures{
-    height:700px ;
-    width:85% ;
-    border: 1px solid black;
+#random{
+    height: 2000px;
+    width: 90%;
     margin: auto;
-    display:grid;
-    
-
+    border: 1px solid rebeccapurple;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap: 20px;
+    margin-top: 40px;
 }
-#pictures>img{
-    height: 100%;
+#random>div{
+    border: 1px solid black;
+}
+#random>div>img{
+    height: 80%;
     width: 100%;
 }
