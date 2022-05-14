@@ -52,6 +52,7 @@
         </div>
       </div>
     </div>
+    <div class="text"><h1>Cart</h1></div>
     <div id="random"></div>
   </body>
 </html>
@@ -74,6 +75,8 @@
     document.querySelector("#random").innerHTML = "";
     data.forEach(function (el, i) {
         var main=document.createElement("div")
+     
+
       var cards = document.createElement("div");
       var img = document.createElement("img");
       var nichewaladiv = document.createElement("div");
@@ -97,7 +100,8 @@
       <option value="3">three</option>
       <option value="4">four</option>
       <option value="5">five</option>
-      <option value="6">six <span>Max Qty</span></option>`
+      <option value="6">six</option>
+      <option value="7">seven<span>Max quantity</span></option>`
       qty.addEventListener("change",function(){
               pricechange(el.price,qty.value,huru)
       })
@@ -126,13 +130,13 @@
   function delfun(el,i){
     cartdata.splice(i,1);
     localStorage.setItem("cartitems", JSON.stringify(cartdata));
-    alert("Deleted Successfully")
+    alert("Do you wanna delete it?")
     display(cartdata)
   }
   function  pricechange(el,qty,huru){
       var daam=el*qty
       huru.innerText=daam
-      localStorage.setItem("cartitems", JSON.stringify(cartdata));
-      display(cartdata)
+      // localStorage.setItem("cartitems", JSON.stringify(cartdata));
+      // display(cartdata)
   }
 </script>

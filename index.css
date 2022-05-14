@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     height: 75px;
     width: 95%;
     margin: auto;
@@ -12,19 +12,22 @@
     position: sticky;
     top: 10px;
     left: 10px;
-    
+
 }
-#logo{
+
+#logo {
     height: 70%;
     width: 10%;
     /* border: 1px solid red; */
-   margin-left: 10px;
+    margin-left: 10px;
 }
-#logo>svg{
+
+#logo>svg {
     height: 150%;
 
 }
-.allothers{
+
+.allothers {
     height: 100%;
     width: 30%;
     /* border: 1px solid red; */
@@ -32,7 +35,8 @@
     justify-content: space-around;
     align-items: center;
 }
-.allothers>div{
+
+.allothers>div {
     height: 50%;
     width: 25%;
     /* border: 1px solid red; */
@@ -47,29 +51,28 @@
 
 }
 
-/* #maindiv{
-    border: 1px solid red;
-    height: auto;
-    width: 90%;
-    margin: auto;
-    
-
-} */
-a{
+a {
     color: white;
     text-decoration: none;
 }
-#pictures{
-    height:700px ;
-    width:85% ;
+
+.pictures {
+    height: 700px;
+    width: 85%;
     border: 1px solid black;
     margin: auto;
-    display:grid;
+    display: grid;
     margin-top: 20px;
-    
+
 
 }
-#pictures>img{
+
+.pictures>img {
     height: 100%;
     width: 100%;
+}
+
+.Bpictures {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }

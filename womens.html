@@ -51,6 +51,14 @@
         </div>
       </div>
     </div>
+    <div class="text">
+      <h2>Filters</h2>
+      <select  id="price">
+        <option value="">Price</option>
+        <option value="1">Low to High</option>
+        <option value="-1">High To Low</option>
+      </select>
+    </div>
     <div id="random"></div>
   </body>
 </html>
@@ -72,7 +80,7 @@
       womens.push(maindata[i]);
     }
   }
- 
+  var sort=document.querySelector("#price")
   display(womens);
   function display(data) {
     document.querySelector("#random").innerHTML = "";
@@ -118,5 +126,33 @@
     alert("item has been added")
     display(womens)
   }
-  
+  sort.addEventListener("change",sortdata)
+   function sortdata(){
+     var kuru=sort.value
+     if(kuru==="1"){
+        womens.sort(function(a,b){
+               if(a.price<b.price){
+                 return -1
+               }else{
+                 return 1
+               }
+               return 0
+
+        })
+     }else if(kuru==="-1"){
+     womens.sort(function(a,b){
+               if(a.price<b.price){
+                 return 1
+               }else{
+                 return -1
+               }
+               return 0
+
+        })
+     }
+     else{
+       display(womens)
+     }
+    display(womens)
+   }
 </script>
