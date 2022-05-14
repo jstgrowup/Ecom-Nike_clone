@@ -8,7 +8,7 @@
     height: 80px;
     width: 95%;
     margin: auto;
-    border: 1px solid rgb(22, 21, 21);
+    /* border: 1px solid rgb(22, 21, 21); */
     background-color: white;
     
     display: flex;
@@ -45,7 +45,7 @@
 .allothers>div{
     height: 60%;
     width: 25%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     background-color: black;
     color: white;
     font-family: sans-serif;
@@ -77,11 +77,12 @@
     font-family: sans-serif;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    
 
     
     
 }
-.sneakers,.womens{
+.mens,.sneakers{
     background-color: gray;
     
 }
@@ -103,14 +104,14 @@ a{
 #panel>:nth-child(1) p{
     color: white;
 }
-#panel>:nth-child(3) p{
+#panel>:nth-child(2) p{
     color: white;
 }
 #filters{
     height: 50px;
     width: 95%;
     margin: auto;
-    border: 1px solid rgb(22, 21, 21);
+    /* border: 1px solid rgb(22, 21, 21); */
     margin-top: 20px;
     position: static;
     top: 20px;

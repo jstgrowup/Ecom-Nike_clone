@@ -10,7 +10,7 @@
   <body>
     <div class="navbar">
       <div id="logo">
-        <svg
+        <a href="products.html"><svg
           class="pre-logo-svg"
           width="60px"
           height="60px"
@@ -29,7 +29,7 @@
               <rect width="64" height="33.7654" fill="white"></rect>
             </clipPath>
           </defs>
-        </svg>
+        </svg></a> 
       </div>
       <div id="panel">
         <div class="sneakers">
@@ -66,14 +66,14 @@
     document.querySelector("#signin h5").innerHTML = naam;
   }
   var maindata = JSON.parse(localStorage.getItem("maindata"));
-  var sneakers = JSON.parse(localStorage.getItem("cartitems")) || [];
+  var mens= [];
   for (var i = 0; i < maindata.length; i++) {
     if (maindata[i].category === "mens") {
-      sneakers.push(maindata[i]);
+      mens.push(maindata[i]);
     }
   }
-  var mensarr = [];
-  display(sneakers);
+ 
+  display(mens);
   function display(data) {
     document.querySelector("#random").innerHTML = "";
     data.forEach(function (el, i) {
@@ -102,7 +102,7 @@
 
       btn.setAttribute("class", "sub");
       btn.addEventListener("click", function () {
-        jutafun(el);
+        jutafun(el,data);
       });
 
       pricetag.append(daam, huru);
@@ -111,10 +111,12 @@
       document.querySelector("#random").append(cards);
     });
   }
-  function jutafun(el) {
+  var mensarr =JSON.parse(localStorage.getItem("cartitems"))||[];
+  function jutafun(el,data){
     mensarr.push(el);
-    localStorage.setItem("cartitems", JSON.stringify(mensarr));
-    alert("item has been added")
+         localStorage.setItem("cartitems", JSON.stringify(mensarr));
+         alert("item has been added")
+         display(mens)
   }
-  console.log(mensarr)
+  
 </script>

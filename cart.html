@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nike.sneakers</title>
-    <link rel="stylesheet" href="sneakers.css" />
+    <title>Nike.cart</title>
+    <link rel="stylesheet" href="cart.css" />
+
   </head>
   <body>
     <div class="navbar">
       <div id="logo">
-        <a href="products.html"><svg
+       <a href="products.html"><svg
           class="pre-logo-svg"
           width="60px"
           height="60px"
@@ -51,81 +52,87 @@
         </div>
       </div>
     </div>
-    <div id="random">
-
-    </div>
+    <div id="random"></div>
   </body>
 </html>
 <script>
-      var data=JSON.parse(localStorage.getItem("maiduserdata"))
-    var usernamedisplay=document.querySelector(".allothers")
-    var naamwaladiv=document.querySelector("#signin")
-    var naam=data.name
-    
-    if(data!==null){
-        usernamedisplay.innerHTML=` <div id="signin"><h5></h5></div>
-                    <div id="login"><h3><a href="cart.html">Cart</a></h3></div>`
-        document.querySelector("#signin h5").innerHTML=naam
-         
-        
-    }
-    var maindata=JSON.parse(localStorage.getItem("maindata"))
-    var sneakers=[]
-    for(var i=0;i<maindata.length;i++){
-        if(maindata[i].category==="sneakers"){
-           sneakers.push(maindata[i])
-        }
-    }
+ var data = JSON.parse(localStorage.getItem("maiduserdata"));
+  var usernamedisplay = document.querySelector(".allothers");
+  var naamwaladiv = document.querySelector("#signin");
+  var naam = data.name;
+
+  if (data !== null) {
+    usernamedisplay.innerHTML = ` <div id="signin"><h5></h5></div>
+                    <div id="login"><h3><a href="payment.html">Buy</a></h3></div>`;
+    document.querySelector("#signin h5").innerHTML = naam;
+  }
  
-    display(sneakers)
-   function display(data){
-       document.querySelector("#random").innerHTML=""
-       data.forEach(function(el,i){
-         var cards=document.createElement("div")
-
-         var img=document.createElement("img")
-         var nichewaladiv=document.createElement("div")
-         var daam=document.createElement("p")
-         var huru=document.createElement("p")
-         var model=document.createElement("h4")
-         var pricetag=document.createElement("div")
-    //    var after=document.createElement("div")
-         var btn=document.createElement("div")
-         btn.innerText="Add to cart"
-         
-         img.setAttribute("src",el.img)
-         nichewaladiv.setAttribute("id","below")
-         daam.setAttribute("id","daam")
-         daam.innerHTML=`Rs.`
-       
-        huru.setAttribute("class","huru")
-         huru.innerText=el.price
-         daam.append(huru)
-         
-         
-         model.innerText=el.model
-         pricetag.setAttribute("class","pricetag")
-
-
-          btn.setAttribute("class","sub")
-          btn.addEventListener("click",function(){
-             jutafun(el)
-          })
-
-         pricetag.append(daam,huru)
-         nichewaladiv.append(model,pricetag,btn)
-         cards.append(img,nichewaladiv)
-         document.querySelector("#random").append(cards)
-         
-       })
-   }  
-   var jutaarr=JSON.parse(localStorage.getItem("cartitems"))||[]
-   function jutafun(el){
-      
-      jutaarr.push(el)
-      localStorage.setItem("cartitems",JSON.stringify(jutaarr))
-      alert("item has been added")
-      display(sneakers)
-   } 
   
+  var cartdata = JSON.parse(localStorage.getItem("cartitems"))||[];
+  display(cartdata);
+  function display(data) {
+    document.querySelector("#random").innerHTML = "";
+    data.forEach(function (el, i) {
+        var main=document.createElement("div")
+      var cards = document.createElement("div");
+      var img = document.createElement("img");
+      var nichewaladiv = document.createElement("div");
+      var daam = document.createElement("p");
+      var huru = document.createElement("p");
+      var model = document.createElement("h4");
+      var pricetag = document.createElement("div");
+      //var after=document.createElement("div")
+      var btn = document.createElement("div");
+      btn.innerText = "remove";
+      btn.setAttribute("class", "sub");
+      btn.addEventListener("click",function () {
+        delfun(el, i);
+      });
+
+      var qty=document.createElement("select")
+      qty.setAttribute("class","quantity")
+      qty.innerHTML=`<option value="none">How many:</option>
+      <option value="1">one</option>
+      <option value="2">two</option>
+      <option value="3">three</option>
+      <option value="4">four</option>
+      <option value="5">five</option>
+      <option value="6">six <span>Max Qty</span></option>`
+      qty.addEventListener("change",function(){
+              pricechange(el.price,qty.value,huru)
+      })
+      main.setAttribute("class","maindiv")
+      img.setAttribute("src", el.img);
+      nichewaladiv.setAttribute("id", "below");
+      daam.setAttribute("id", "daam");
+      daam.innerHTML = `Rs.`;
+
+      huru.setAttribute("class", "huru");
+     
+      huru.innerText =el.price;
+      daam.append(huru);
+
+      model.innerText = el.model;
+      pricetag.setAttribute("class", "pricetag");
+
+    
+      pricetag.append(daam, huru);
+      nichewaladiv.append(model, pricetag, btn,qty);
+      cards.append(img, nichewaladiv);
+      document.querySelector("#random").append(cards);
+    });
+  }
+ 
+  function delfun(el,i){
+    cartdata.splice(i,1);
+    localStorage.setItem("cartitems", JSON.stringify(cartdata));
+    alert("Deleted Successfully")
+    display(cartdata)
+  }
+  function  pricechange(el,qty,huru){
+      var daam=el*qty
+      huru.innerText=daam
+      localStorage.setItem("cartitems", JSON.stringify(cartdata));
+      display(cartdata)
+  }
 </script>
