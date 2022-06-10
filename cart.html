@@ -74,7 +74,7 @@
   function display(data) {
     document.querySelector("#random").innerHTML = "";
     data.forEach(function (el, i) {
-        var main=document.createElement("div")
+      var main=document.createElement("div")
      
 
       var cards = document.createElement("div");
@@ -88,7 +88,7 @@
       var btn = document.createElement("div");
       btn.innerText = "remove";
       btn.setAttribute("class", "sub");
-      btn.addEventListener("click",function () {
+      btn.addEventListener("click",function (){
         delfun(el, i);
       });
 
@@ -101,9 +101,14 @@
       <option value="4">four</option>
       <option value="5">five</option>
       <option value="6">six</option>
-      <option value="7">seven<span>Max quantity</span></option>`
+      <option value="7">seven</option>
+      <option value="8">eight</option>
+      <option value="9">nine</option>
+      <option value="10">ten</option>
+      <option value="11">eleven</option>
+      <option value="12">twelve<span>Max quantity</span></option>`
       qty.addEventListener("change",function(){
-              pricechange(el.price,qty.value,huru)
+              pricechange(el,qty)
       })
       main.setAttribute("class","maindiv")
       img.setAttribute("src", el.img);
@@ -113,7 +118,7 @@
 
       huru.setAttribute("class", "huru");
      
-      huru.innerText =el.price;
+      huru.innerText =(el.price*el.quantity).toFixed(2)
       daam.append(huru);
 
       model.innerText = el.model;
@@ -133,10 +138,13 @@
     alert("Do you wanna delete it?")
     display(cartdata)
   }
-  function  pricechange(el,qty,huru){
-      var daam=el*qty
-      huru.innerText=daam
-      // localStorage.setItem("cartitems", JSON.stringify(cartdata));
-      // display(cartdata)
-  }
+  function  pricechange(el,qty){
+    el.quantity=qty.value
+   localStorage.setItem("cartitems",JSON.stringify(cartdata))
+    cartdata=JSON.parse(localStorage.getItem("cartitems"))||[]
+    display(cartdata)
+    // window.location.reload()
+}
+ 
+
 </script>
