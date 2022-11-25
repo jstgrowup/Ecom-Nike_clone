@@ -1,52 +1,45 @@
-#signupform{
-  height: fit-content;
-  width: 400px;
-  border: 1px solid gray;
-  margin: auto;
-  margin-top: 90px;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-cursor: pointer;
-display: flex;
-justify-content: center;
-
-
-
-
-
-
+#signupform {
+    height: fit-content;
+    width: 400px;
+    border: 1px solid gray;
+    margin: auto;
+    margin-top: 90px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
-#signupform:hover{
-transform: scale(1.02);
+
+#signupform:hover {
+    transform: scale(1.02);
 }
-#signupID>input{
+
+#signupID>input {
     border-radius: 4px;
     height: 35px;
     width: 300px;
-    border:2px solid darkgray
-
-     
+    border: 2px solid darkgray
 }
-#signupID{
+
+#signupID {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
-    flex-direction:column ;
+    flex-direction: column;
 }
-.signupsubmit{
+
+.signupsubmit {
     margin-top: 10px;
-    
-    
 }
-#signupID>:last-child{
+
+#signupID>:last-child {
     width: 300px;
-    margin-top:15px;
+    margin-top: 15px;
     margin-left: 5px;
     cursor: pointer;
-    background-color:darkgray;
+    background-color: darkgray;
     font-weight: 500;
     margin-bottom: 25px;
-    margin-top:20px ;
-
-
+    margin-top: 20px;
 }

@@ -9,13 +9,13 @@ if (data !== null) {
   document.querySelector("#signin h5").innerHTML = naam;
 }
 var maindata = JSON.parse(localStorage.getItem("maindata"));
-var womens= [];
+var womens = [];
 for (var i = 0; i < maindata.length; i++) {
   if (maindata[i].category === "women") {
     womens.push(maindata[i]);
   }
 }
-var sort=document.querySelector("#price")
+var sort = document.querySelector("#price");
 display(womens);
 function display(data) {
   document.querySelector("#random").innerHTML = "";
@@ -47,46 +47,42 @@ function display(data) {
     btn.addEventListener("click", function () {
       jutafun(el);
     });
-
     pricetag.append(daam, huru);
     nichewaladiv.append(model, pricetag, btn);
     cards.append(img, nichewaladiv);
     document.querySelector("#random").append(cards);
   });
 }
-var womensarr =JSON.parse(localStorage.getItem("cartitems"))||[];
+var womensarr = JSON.parse(localStorage.getItem("cartitems")) || [];
 function jutafun(el) {
   womensarr.push(el);
   localStorage.setItem("cartitems", JSON.stringify(womensarr));
-  alert("item has been added")
-  display(womens)
+  alert("item has been added");
+  display(womens);
 }
-sort.addEventListener("change",sortdata)
- function sortdata(){
-   var kuru=sort.value
-   if(kuru==="1"){
-      womens.sort(function(a,b){
-             if(a.price<b.price){
-               return -1
-             }else{
-               return 1
-             }
-             return 0
-
-      })
-   }else if(kuru==="-1"){
-   womens.sort(function(a,b){
-             if(a.price<b.price){
-               return 1
-             }else{
-               return -1
-             }
-             return 0
-
-      })
-   }
-   else{
-     display(womens)
-   }
-  display(womens)
- }
+sort.addEventListener("change", sortdata);
+function sortdata() {
+  var kuru = sort.value;
+  if (kuru === "1") {
+    womens.sort(function (a, b) {
+      if (a.price < b.price) {
+        return -1;
+      } else {
+        return 1;
+      }
+      return 0;
+    });
+  } else if (kuru === "-1") {
+    womens.sort(function (a, b) {
+      if (a.price < b.price) {
+        return 1;
+      } else {
+        return -1;
+      }
+      return 0;
+    });
+  } else {
+    display(womens);
+  }
+  display(womens);
+}

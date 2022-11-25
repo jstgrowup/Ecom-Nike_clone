@@ -121,4 +121,4 @@ var maindata = [
   },
 ];
 
-localStorage.setItem("backenddata",JSON.stringify(maindata))
+localStorage.setItem("backenddata", JSON.stringify(maindata));
